@@ -20,7 +20,7 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      -       - name: Check Android SDK
+      - name: Check Android SDK
         run: |
           echo "ANDROID_HOME=$ANDROID_HOME"
           test -d "$ANDROID_HOME"
