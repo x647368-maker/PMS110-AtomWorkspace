@@ -20,8 +20,11 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Install Android SDK
-        uses: android-actions/setup-android@v3
+      -       - name: Check Android SDK
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          test -d "$ANDROID_HOME"
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --version
 
       - name: Download NeXtep source
         run: |
